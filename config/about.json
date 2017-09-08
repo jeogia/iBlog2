@@ -1,10 +1,10 @@
 {
-  "FirstLine": "第一行文本",
-  "SecondLine": "第二行文本",
+  "FirstLine": "Welcome! 欢迎造访  >>^_^<< ",
+  "SecondLine": "My name is Zhao Zhouyang(赵洲洋), you can call me JoJo :)",
   "PhotoPath": "/images/zhr.jpg",
-  "ThirdLine": "第三行文本",
-  "Profile": "个人简介",
-  "Wechat": "微信号",
+  "ThirdLine": "Live in Beijing. Born in 1980s.",
+  "Profile": "I am an IT developer focusing on web technology. Now I am employed by Microsoft as a Node/JavaScript engineer.\r\nIn spare time, I like reading book, surfing internet, watching comic and movie.",
+  "Wechat": "JosiahChiu",
   "QrcodePath": "",
-  "Email": "Email地址"
+  "Email": "493106672@qq.com"
 }

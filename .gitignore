@@ -1,8 +1,10 @@
 node_modules/
 *.log
 public/libs
-.DS_Store
 public/uploads
+public/images
+
+.DS_Store
 
 .idea/
 .gitignore
