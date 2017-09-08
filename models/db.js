@@ -1,9 +1,19 @@
 var dbPath = require('../config').DbPath;
-// var dbPath =  process.env.MONGOLAB_URI;
 var mongoose = require('mongoose');
 var extend = require('mongoose-schema-extend');
 var i18n = require('./i18n');
 // use custom mongodb url or localhost
+
+var localDbInfo = null
+try {
+  var localDbInfo = require('../dbInfo')
+} catch (e) {
+ console.log(e)
+}
+if (localDbInfo) {
+  dbPath = localDbInfo.connection
+}
+
 mongoose.connect(dbPath || "mongodb://localhost/blogrift");
 var db = mongoose.connection;
 db.on('error', function (err) {

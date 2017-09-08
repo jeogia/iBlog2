@@ -1,8 +1,18 @@
 var winston = require('winston');
 var dbPath = require('../config').DbPath;
-// var dbPath =  process.env.MONGOLAB_URI;
 var os = require('os');
 require('winston-mongodb').MongoDB;
+
+var localDbInfo = null
+try {
+  var localDbInfo = require('../dbInfo')
+} catch (e) {
+ console.log(e)
+}
+if (localDbInfo) {
+  dbPath = localDbInfo.connection
+}
+
 var logger = new (winston.Logger)({
     transports: [
         new (winston.transports.Console)({
