@@ -1,6 +1,9 @@
 node_modules/
 *.log
 public/libs
+.DS_Store
+public/uploads
+
 .idea/
 .gitignore
 dbInfo.json

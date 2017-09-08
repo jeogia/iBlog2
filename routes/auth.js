@@ -6,13 +6,27 @@ var passport = require('passport');
 var Strategy = require('passport-local').Strategy;
 var logger = require('../utility/logger');
 
+function getAccount () {
+  var account = require('../config/account');
+  try {
+    var localDbInfo = require('../dbInfo')
+    console.log(localDbInfo)
+    account.UserName = localDbInfo.username
+    account.Password = localDbInfo.password
+  } catch (e) {
+   console.log(e)
+  }
+  console.log(account)
+  return account
+}
+
 passport.use(new Strategy(
     {
         usernameField: 'UserName',//页面上的用户名字段的name属性值
         passwordField: 'Password'//页面上的密码字段的name属性值
     },
     function (username, password, cb) {
-        var account = require('../config/account');
+        var account = getAccount();
         //自己判断用户是否有效
         if (username === account.UserName && password === account.Password) {
             //验证通过
@@ -28,7 +42,7 @@ passport.serializeUser(function (user, cb) {
 });
 
 passport.deserializeUser(function (id, cb) {
-    var account = require('../config/account');
+    var account =  getAccount();
     if (account.Id === id) {
         return cb(null, account);
     } else {
