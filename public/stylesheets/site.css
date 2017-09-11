@@ -243,7 +243,7 @@ blockquote {
 
 .category-list .nav li a img {
     width: 25px;
-    height: 25px;
+    height: auto;
     margin-right: 4px;
     margin-top: -3px;
 }
