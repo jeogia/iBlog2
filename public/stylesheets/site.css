@@ -88,7 +88,7 @@ blockquote {
 }
 
 .detail-container img {
-  width: 100%;
+  max-width: 100%;
 }
 
 .navbar .navbar-brand img {
